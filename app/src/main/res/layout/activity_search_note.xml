@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Activities.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        >
+        <EditText
+            android:id="@+id/edtSearchNote"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/search_background"
+            android:drawableEnd="@drawable/ic_close"
+            android:paddingRight="10dp"
+            android:lines="1"
+            android:maxLines="1"
+            android:hint="Search by the keyword..."
+            android:textColorHint="@color/textColor"
+            android:paddingStart="30dp"
+            android:textColor="@color/textColor"
+            />
+        <LinearLayout
+            android:id="@+id/noItemFoundDisplay"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:src="@drawable/note_found"
+                android:scaleType="centerCrop"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="File not found. Try searching again."
+                android:textSize="18sp"
+                android:textColor="@color/textColor"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvNotesListSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_note"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
